@@ -1,56 +1,60 @@
 [![Build Status](https://travis-ci.org/stonelasley/ionic-mocks.svg?branch=master)](https://travis-ci.org/stonelasley/ionic-mocks)
 
 # ionic-mocks
-Simple test doubles for Ionic 2+ using Jasmine Spy Objects
+
+Simple test doubles for Ionic using Jasmine Spy Objects
 
 This project is still very early in development and there are several things I'm sorting out. However since this is only meant
 to be used in your tests it should be safe to pull into a project.
 
 ## Supported Types
-- ActionSheet
-- ActionSheetController
-- Alert
-- AlertController
-- App
-- Content
-- Config
-- Events
-- Form
-- Haptic
-- InfiniteScroll
-- ItemSliding
-- KeyBoard - exported as IonKeyboard
-- Loading
-- LoadingController
-- Menu
-- MenuController
-- Modal
-- ModalController
-- Platform
-- Popover
-- PopoverController
-- NavController
-- NavParams
-- StatusBar
-- Storage
-- Tab
-- Tabs
-- Toast
-- ToastController
-- ViewController
+
+* ActionSheet
+* ActionSheetController
+* Alert
+* AlertController
+* App
+* Content
+* Config
+* Events
+* Form
+* Haptic
+* InfiniteScroll
+* ItemSliding
+* KeyBoard - exported as IonKeyboard
+* Loading
+* LoadingController
+* Menu
+* MenuController
+* Modal
+* ModalController
+* Platform
+* Popover
+* PopoverController
+* NavController
+* NavParams
+* StatusBar
+* Storage
+* Tab
+* Tabs
+* Toast
+* ToastController
+* ViewController
 
 ## Native Plugins
-- 3DTouch
-- File
-- GoogleAnalyics
-- Keyboard
-- Network
-- NFC
-- Splashscreen
-- StatusBar
-- Vibration
+
+* 3DTouch
+* File
+* GoogleAnalyics
+* Keyboard
+* Network
+* NFC
+* Splashscreen
+* StatusBar
+* Vibration
 
 ## Installation
+
 ```bash
 npm install --save-dev ionic-mocks
 ```
@@ -58,39 +62,36 @@ npm install --save-dev ionic-mocks
 ### Examples
 
 ```typescript
-import {Events, AlertController} from 'ionic-angular';
-import {EventsMock, AlertControllerMock} from 'ionic-mocks';
+import { Events, AlertController } from 'ionic-angular';
+import { EventsMock, AlertControllerMock } from 'ionic-mocks';
 
 describe('MyClass', () => {
+  let events: Events;
+  let alertCtrl: AlertController;
 
-    let events: Events;
-    let alertCtrl: AlertController;
+  let classUnderTest: MyClass;
 
-    let classUnderTest: MyClass;
+  beforeEach(() => {
+    events = EventsMock.instance();
+    alertCtrl = AlertControllerMock.instance();
 
-    beforeEach(() => {
+    classUnderTest = new MyClass(events, alertCtrl);
+  });
 
-        events = EventsMock.instance();
-        alertCtrl = AlertControllerMock.instance();
+  it('should subscribe to events', () => {
+    expect(events.subscribe).toHaveBeenCalled();
+  });
 
-        classUnderTest = new MyClass(events, alertCtrl);
-    });
+  it('should call alert create', () => {
+    classUnderTest.showAlert();
 
-
-    it('should subscribe to events', () => {
-    	expect(events.subscribe).toHaveBeenCalled();
-    });
-
-    it('should call alert create', () => {
-
-        classUnderTest.showAlert();
-
-        expect(alertCtrl.create).toHaveBeenCalled();
-    });
+    expect(alertCtrl.create).toHaveBeenCalled();
+  });
 });
 ```
 
 ### Pre-mocked return types
+
 ```typescript
 import {Events, AlertController, Alert} from 'ionic-angular';
 import {EventsMock, AlertControllerMock, AlertMock} from 'ionic-mocks';
@@ -125,27 +126,16 @@ describe('MyComponent', () => {
 ```
 
 ### Override ionic providers in TestingModule
+
 ```typescript
 TestBed.configureTestingModule({
-    imports: [IonicModule],
-    declarations: [MyComponentUnderTest],
-    providers: [
-            {provide: ViewController, useFactory: () => ViewControllerMock.instance()}
-    ]
+  imports: [IonicModule],
+  declarations: [MyComponentUnderTest],
+  providers: [
+    { provide: ViewController, useFactory: () => ViewControllerMock.instance() }
+  ]
 });
 ```
-# Contributing
-This project has a long way to go and is full of opportunities to contribute.
-I am back in school and working so for the rest of the year expect my responsiveness on this project to be slow. If anyone is up to helping vet PRs please message me. sclarklasley@gmail.com
-
-## Contributors
-  - [Felix Whittmann](https://github.com/hfwittmann)
-  - [Leif Wells](https://github.com/leifwells)
-  - [Jesus Botella](https://github.com/jesusbotella)
-  - [Damir Arh](https://github.com/damirarh)
-  - [Rvdleun](https://github.com/rvdleun)
-  - [Andrey Zakharov](https://github.com/enstain)
-  - [Peter Svehla](https://github.com/psvehla)
 
 ### Frequently Asked Questions:
 
@@ -158,6 +148,7 @@ Answer: This means you've done something wrong. Take a look at this example:
 // USING useClass INSTEAD OF useFactory IS INCORRECT
 { provide: App, useClass: AppMock }
 ```
+
 ```ts
 // DO NOT DO THIS
 // USING useFactory WITHOUT THE FAT ARROW SYNTAX IS INCORRECT
