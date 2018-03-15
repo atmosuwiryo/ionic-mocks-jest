@@ -1,6 +1,6 @@
 {
   "name": "ionic-mocks-jest",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Stubbed and Pre-mocked Ionic Objects",
   "repository": "git@github.com:danielsogl/ionic-mocks-jest.git",
   "main": "./dist/index.js",
