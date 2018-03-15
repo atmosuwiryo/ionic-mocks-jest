@@ -41,12 +41,14 @@ to be used in your tests it should be safe to pull into a project.
 
 ## Native Plugins
 - 3DTouch
+- File
 - GoogleAnalyics
 - Keyboard
 - Network
 - NFC
 - Splashscreen
 - StatusBar
+- Vibration
 
 ## Installation
 ```bash
@@ -139,9 +141,11 @@ I am back in school and working so for the rest of the year expect my responsive
 ## Contributors
   - [Felix Whittmann](https://github.com/hfwittmann)
   - [Leif Wells](https://github.com/leifwells)
+  - [Jesus Botella](https://github.com/jesusbotella)
   - [Damir Arh](https://github.com/damirarh)
   - [Rvdleun](https://github.com/rvdleun)
   - [Andrey Zakharov](https://github.com/enstain)
+  - [Peter Svehla](https://github.com/psvehla)
 
 ### Frequently Asked Questions:
 
