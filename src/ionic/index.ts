@@ -1,5 +1,3 @@
 import { StorageMock } from './storage';
 
-export {
-    StorageMock
-};
+export { StorageMock };

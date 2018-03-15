@@ -1,20 +1,22 @@
+import { createSpyObj } from '../utilities/create-spy';
+
 export class FileMock {
-  public applicationDirectory: string = "a-directory";
-  public applicationStorageDirectory: string = "a-directory";
-  public dataDirectory: string = "a-directory";
-  public cacheDirectory: string = "a-directory";
-  public externalApplicationStorageDirectory: string = "a-directory";
-  public externalDataDirectory: string = "a-directory";
-  public externalCacheDirectory: string = "a-directory";
-  public externalRootDirectory: string = "a-directory";
-  public tempDirectory: string = "a-directory";
-  public syncedDataDirectory: string = "a-directory";
-  public documentsDirectory: string = "a-directory";
-  public sharedDirectory: string = "a-directory";
+  public applicationDirectory = 'a-directory';
+  public applicationStorageDirectory = 'a-directory';
+  public dataDirectory = 'a-directory';
+  public cacheDirectory = 'a-directory';
+  public externalApplicationStorageDirectory = 'a-directory';
+  public externalDataDirectory = 'a-directory';
+  public externalCacheDirectory = 'a-directory';
+  public externalRootDirectory = 'a-directory';
+  public tempDirectory = 'a-directory';
+  public syncedDataDirectory = 'a-directory';
+  public documentsDirectory = 'a-directory';
+  public sharedDirectory = 'a-directory';
   public cordovaFileError: any;
 
   public static instance(): any {
-    let instance = jasmine.createSpyObj('File', [
+    const instance = createSpyObj('File', [
       'getFreeDiskSpace',
       'checkDir',
       'createDir',
@@ -53,10 +55,14 @@ export class FileMock {
     instance.removeFile.and.returnValue(Promise.resolve());
     instance.writeFile.and.returnValue(Promise.resolve());
     instance.writeExistingFile.and.returnValue(Promise.resolve());
-    instance.readAsText.and.returnValue(Promise.resolve("a string"));
-    instance.readAsDataURL.and.returnValue(Promise.resolve("data:,some%20data"));
-    instance.readAsBinaryString.and.returnValue(Promise.resolve("101010"));
-    instance.readAsArrayBuffer.and.returnValue(Promise.resolve(new ArrayBuffer(1)));
+    instance.readAsText.and.returnValue(Promise.resolve('a string'));
+    instance.readAsDataURL.and.returnValue(
+      Promise.resolve('data:,some%20data')
+    );
+    instance.readAsBinaryString.and.returnValue(Promise.resolve('101010'));
+    instance.readAsArrayBuffer.and.returnValue(
+      Promise.resolve(new ArrayBuffer(1))
+    );
     instance.moveFile.and.returnValue(Promise.resolve());
     instance.copyFile.and.returnValue(Promise.resolve());
     instance.resolveLocalFilesystemUrl.and.returnValue(Promise.resolve());

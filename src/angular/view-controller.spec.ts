@@ -1,8 +1,7 @@
 import { ViewControllerMock } from './view-controller';
 describe('ViewControllerMock', () => {
-	it('should initialize', () => {
-		let instance = ViewControllerMock.instance();
-		expect(instance).toBeDefined();
-	});
-
+  it('should initialize', () => {
+    const instance = ViewControllerMock.instance();
+    expect(instance).toBeDefined();
+  });
 });
