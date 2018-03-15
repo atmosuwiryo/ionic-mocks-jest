@@ -1,11 +1,6 @@
-[![Build Status](https://travis-ci.org/stonelasley/ionic-mocks.svg?branch=master)](https://travis-ci.org/stonelasley/ionic-mocks)
+# ionic-mocks-jest
 
-# ionic-mocks
-
-Simple test doubles for Ionic using Jasmine Spy Objects
-
-This project is still very early in development and there are several things I'm sorting out. However since this is only meant
-to be used in your tests it should be safe to pull into a project.
+Simple test doubles for Ionic using Jasmine Spy Objects and Jest support
 
 ## Supported Types
 
@@ -56,14 +51,14 @@ to be used in your tests it should be safe to pull into a project.
 ## Installation
 
 ```bash
-npm install --save-dev ionic-mocks
+npm install --save-dev ionic-mocks-jest
 ```
 
 ### Examples
 
 ```typescript
-import { Events, AlertController } from 'ionic-angular';
-import { EventsMock, AlertControllerMock } from 'ionic-mocks';
+import { AlertController, Events } from 'ionic-angular';
+import { AlertControllerMock, EventsMock } from 'ionic-mocks';
 
 describe('MyClass', () => {
   let events: Events;
@@ -93,8 +88,8 @@ describe('MyClass', () => {
 ### Pre-mocked return types
 
 ```typescript
-import {Events, AlertController, Alert} from 'ionic-angular';
-import {EventsMock, AlertControllerMock, AlertMock} from 'ionic-mocks';
+import { Alert, AlertController, Events } from 'ionic-angular';
+import { AlertControllerMock, AlertMock, EventsMock } from 'ionic-mocks';
 
 describe('MyComponent', () => {
 
@@ -135,6 +130,7 @@ TestBed.configureTestingModule({
     { provide: ViewController, useFactory: () => ViewControllerMock.instance() }
   ]
 });
+
 ```
 
 ### Frequently Asked Questions:
