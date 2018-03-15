@@ -1,4 +1,4 @@
-import { createSpyObj } from '../utilities/create-spy';
+import { createSpyObj } from '../../utilities/create-spy';
 
 export class StatusBarMock {
   public static instance(): any {

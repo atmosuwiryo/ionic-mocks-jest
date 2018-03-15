@@ -1,7 +1,7 @@
 import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
 import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 
-import { createSpyObj } from '../utilities/create-spy';
+import { createSpyObj } from '../../utilities/create-spy';
 
 export class ThreeDeeTouchMock {
   public static instance(): any {
