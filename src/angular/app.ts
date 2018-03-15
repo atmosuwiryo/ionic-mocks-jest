@@ -1,5 +1,7 @@
 import { Observable } from 'rxjs/Observable';
 import { ArrayObservable } from 'rxjs/observable/ArrayObservable';
+
+import { createSpyObj } from '../utilities/create-spy';
 import { NavControllerMock } from './nav-controller';
 
 export class AppMock {

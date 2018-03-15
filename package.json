@@ -5,7 +5,7 @@
   "repository": "git@github.com:danielsogl/ionic-mocks-jest.git",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "author": "Stone C. Lasley",
+  "author": "Daniel Sogl",
   "keywords": ["ionic", "ionic2", "ionic3", "mocks", "mock", "jest", "doubles"],
   "bugs": {
     "url": "https://github.com/danielsogl/ionic-mocks-jest"
