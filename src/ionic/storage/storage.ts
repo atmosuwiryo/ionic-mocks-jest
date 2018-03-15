@@ -1,4 +1,4 @@
-import { createSpyObj } from '../utilities/create-spy';
+import { createSpyObj } from '../../utilities/create-spy';
 
 export class StorageMock {
   public static instance(key: any = 'key1', value: any = 'value1'): any {
