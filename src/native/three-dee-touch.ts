@@ -1,5 +1,4 @@
-import { of } from 'rxjs/observable/of';
-import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
+import { of, EMPTY } from 'rxjs';
 
 import { createSpyObj } from '../utilities/create-spy';
 
@@ -15,7 +14,7 @@ export class ThreeDeeTouchMock {
     ]);
     instance.isAvailable.and.returnValue(Promise.resolve(true));
     instance.watchForTouches.and.returnValue(of({}));
-    instance.onHomeIconPressed.and.returnValue(EmptyObservable.create());
+    instance.onHomeIconPressed.and.returnValue(EMPTY);
 
     return instance;
   }

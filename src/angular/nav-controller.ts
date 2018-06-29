@@ -1,4 +1,4 @@
-import { of } from 'rxjs/observable/of';
+import { EMPTY } from 'rxjs';
 import { ViewControllerMock } from './view-controller';
 import { createSpyObj } from '../utilities/create-spy';
 
@@ -83,12 +83,12 @@ export class NavControllerMock {
     instance.length.and.returnValue(0);
     instance.getViews.and.returnValue([]);
     instance.isSwipeBackEnabled.and.returnValue(true);
-    instance.viewDidEnter = of();
-    instance.viewDidLeave = of();
-    instance.viewDidLoad = of();
-    instance.viewWillEnter = of();
-    instance.viewWillLeave = of();
-    instance.viewWillUnload = of();
+    instance.viewDidEnter = EMPTY;
+    instance.viewDidLeave = EMPTY;
+    instance.viewDidLoad = EMPTY;
+    instance.viewWillEnter = EMPTY;
+    instance.viewWillLeave = EMPTY;
+    instance.viewWillUnload = EMPTY;
 
     return instance;
   }

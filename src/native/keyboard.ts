@@ -1,4 +1,4 @@
-import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
+import { EMPTY } from 'rxjs';
 
 import { createSpyObj } from '../utilities/create-spy';
 
@@ -13,8 +13,8 @@ export class KeyboardMock {
       'onKeyboardHide'
     ]);
 
-    instance.onKeyboardShow.and.returnValue(EmptyObservable.create());
-    instance.onKeyboardHide.and.returnValue(EmptyObservable.create());
+    instance.onKeyboardShow.and.returnValue(EMPTY);
+    instance.onKeyboardHide.and.returnValue(EMPTY);
 
     return instance;
   }

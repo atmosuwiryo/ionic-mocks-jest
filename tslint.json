@@ -1,4 +1,8 @@
 {
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules",
+    "node_modules/rxjs-tslint"
+  ],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -7,7 +11,6 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [true, "rxjs", "rxjs/Rx"],
     "import-spacing": true,
     "indent": [true, "spaces"],
     "interface-over-type-literal": true,
@@ -82,7 +85,10 @@
     "ban-comma-operator": true,
     "no-duplicate-switch-case": true,
     "no-return-await": true,
-    "no-namespace": false
-  },
-  "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"]
+    "no-namespace": false,
+    "rxjs-collapse-imports": true,
+    "rxjs-pipeable-operators-only": true,
+    "rxjs-no-static-observable-methods": true,
+    "rxjs-proper-imports": true
+  }
 }

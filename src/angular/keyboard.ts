@@ -1,5 +1,4 @@
 import { createSpyObj } from '../utilities/create-spy';
-import { Observable } from 'rxjs/Observable';
 
 export class IonKeyboardMock {
   public static instance(): any {
